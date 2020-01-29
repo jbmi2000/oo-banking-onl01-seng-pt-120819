@@ -9,16 +9,20 @@ def initialize(name, balance = 1000)
   @status = "open"
 end
 
-def deposit
+def deposit(deposit_amount)
+  @balance += deposit_amount
 end
 
-def display
+def display_balance
+  "Your balance is $#{self.balance}."
 end
 
-def valid?()
+def valid?
+  (status == "open") && (balance > 0) ? true : false
 end
 
 def close_account
+  @status = "closed"
 end
 
 
